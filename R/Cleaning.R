@@ -8,7 +8,7 @@
 clean_mouse_data <- function(file_path) {
   library(readxl)
   library(dplyr)
-  library(tidyr)
+  library(tidyverse)
 
   sheets <- excel_sheets(file_path)
   data_list <- lapply(sheets, function(sheet) read_excel(file_path, sheet = sheet))
@@ -20,6 +20,11 @@ clean_mouse_data <- function(file_path) {
       combined_data[[col]] <- NA  # Add missing columns with NA values
     }
   }
+
+  weight_cols <- grep("^Body Weight", colnames(combined_data), value = TRUE)
+  combined_data[weight_cols] <- lapply(combined_data[weight_cols], function(col) {
+    as.numeric(as.character(col))
+  })
 
   if ("weight" %in% colnames(combined_data) && "date" %in% colnames(combined_data)) {
     combined_data <- combined_data %>%
