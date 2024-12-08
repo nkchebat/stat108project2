@@ -1,11 +1,15 @@
-Package: project2
+Package: fatRats
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
 Author: Yusuf Mian, Waleed Ibrahim, Nick Chebat
 Maintainer: Yusuf Mian, Waleed Ibrahim, Nick Chebat
-Description: More about what it does (maybe more than one line)
+Description: Assists in data cleaning for scientists. Functions help identify spelling errors, check for duplicates, plot outliers to visualize, and. 
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

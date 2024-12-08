@@ -1,0 +1,20 @@
+---
+title: "Introduction to fatRats"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{fatRats}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+THIS IS THE VIGNETTE BOYS
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(project2)
+```
