@@ -8,7 +8,7 @@
 #' @examples
 #' check_trend(data, "Body Weight 1", "Body Weight 2", "decrease")
 #' @export
-check_trend <- function(data, column1, column2, trend = "increase") {
+increase_decrease <- function(data, column1, column2, trend = "increase") {
   library(tidyverse)
   library(gt)
 
