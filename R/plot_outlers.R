@@ -14,7 +14,7 @@ plot_outliers <- function(data, variable) {
     stop(paste("Variable", variable, "not found in the dataset."))
   }
 
-  boxplot <- ggplot(data, aes_string(y = variable)) +
+  boxplot <- ggplot(data, aes_string(y = as.numeric(variable))) +
     geom_boxplot(outlier.colour = "red", outlier.size = 3, outlier.shape = 21, fill = "lightblue") +
     geom_point(
       data = data %>%
