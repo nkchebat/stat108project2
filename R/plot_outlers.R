@@ -22,12 +22,12 @@ plot_outliers <- function(data, variable) {
   outliers <- boxplot.stats(data[[variable]])$out
   outlier_data <- data %>% filter(.data[[variable]] %in% outliers)
 
-  ggplot(data, aes_string(y = variable, x = "1")) +
+  ggplot(data, aes(y = .data[[variable]], x = 1)) +
     geom_boxplot(outlier.colour = "red", outlier.size = 3, fill = "lightblue") +
     if (length(outliers) > 0) {
       geom_point(
         data = outlier_data,
-        aes_string(y = variable, x = "1"),
+        aes(y = .data[[variable]], x = 1),
         color = "red",
         size = 3,
         shape = 21,
