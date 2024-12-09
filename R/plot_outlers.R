@@ -33,7 +33,7 @@ plot_outliers <- function(data, variable) {
         shape = 21,
         stroke = 1.5
       )
-    } +
+    +
     labs(
       title = paste("Boxplot of", variable),
       y = variable,
