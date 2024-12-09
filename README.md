@@ -17,22 +17,22 @@ You can install the development version of fatRats from
 
 ``` r
 install.packages("devtools")
-#> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpJfFeGv/temp_libpath16db0545a4ca8'
+#> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/Rtmpg2rFU5/temp_libpath183405a374d09'
 #> (as 'lib' is unspecified)
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T//Rtmp430wPB/downloaded_packages
+#>  /var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T//Rtmp1Ibk61/downloaded_packages
 devtools::install_github("nkchebat/stat108project2")
 #> Downloading GitHub repo nkchebat/stat108project2@HEAD
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#> * checking for file ‘/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/Rtmp430wPB/remotes17aa5aeb3b61/nkchebat-stat108project2-0c131a5/DESCRIPTION’ ... OK
+#> * checking for file ‘/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/Rtmp1Ibk61/remotes184021a531838/nkchebat-stat108project2-0487895/DESCRIPTION’ ... OK
 #> * preparing ‘fatRats’:
 #> * checking DESCRIPTION meta-information ... OK
 #> * checking for LF line-endings in source and make files and shell scripts
 #> * checking for empty or unneeded directories
 #> Omitted ‘LazyData’ from DESCRIPTION
 #> * building ‘fatRats_0.1.0.tar.gz’
-#> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpJfFeGv/temp_libpath16db0545a4ca8'
+#> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/Rtmpg2rFU5/temp_libpath183405a374d09'
 #> (as 'lib' is unspecified)
 ```
 
@@ -51,8 +51,8 @@ data <- read_excel("R/data/mousedata.xlsx", sheet = 2)
 #> New names:
 #> • `Date Body Weight 2` -> `Date Body Weight 2...5`
 #> • `Date Body Weight 2` -> `Date Body Weight 2...7`
-data$bw1 = as.numeric(data$`Body Weight 1`)
-plot_outliers(data, bw1)
+data$'Body Weight 1' = as.numeric(data$"Body Weight 1") #Make sure you have a numeric
+plot_outliers(data,"Body Weight 1")
 #> 
 #> Attaching package: 'dplyr'
 #> 
@@ -91,20 +91,20 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
 #> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 ```
 
-<div id="lzqxbkpjko" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lzqxbkpjko table {
+<div id="lzclvsndpc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lzclvsndpc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#lzqxbkpjko thead, #lzqxbkpjko tbody, #lzqxbkpjko tfoot, #lzqxbkpjko tr, #lzqxbkpjko td, #lzqxbkpjko th {
+&#10;#lzclvsndpc thead, #lzclvsndpc tbody, #lzclvsndpc tfoot, #lzclvsndpc tr, #lzclvsndpc td, #lzclvsndpc th {
   border-style: none;
 }
-&#10;#lzqxbkpjko p {
+&#10;#lzclvsndpc p {
   margin: 0;
   padding: 0;
 }
-&#10;#lzqxbkpjko .gt_table {
+&#10;#lzclvsndpc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -129,11 +129,11 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_caption {
+&#10;#lzclvsndpc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#lzqxbkpjko .gt_title {
+&#10;#lzclvsndpc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -144,7 +144,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#lzqxbkpjko .gt_subtitle {
+&#10;#lzclvsndpc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -155,7 +155,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#lzqxbkpjko .gt_heading {
+&#10;#lzclvsndpc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -166,12 +166,12 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_bottom_border {
+&#10;#lzclvsndpc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_col_headings {
+&#10;#lzclvsndpc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -185,7 +185,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_col_heading {
+&#10;#lzclvsndpc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -204,7 +204,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#lzqxbkpjko .gt_column_spanner_outer {
+&#10;#lzclvsndpc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -215,13 +215,13 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#lzqxbkpjko .gt_column_spanner_outer:first-child {
+&#10;#lzclvsndpc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#lzqxbkpjko .gt_column_spanner_outer:last-child {
+&#10;#lzclvsndpc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#lzqxbkpjko .gt_column_spanner {
+&#10;#lzclvsndpc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -232,10 +232,10 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   display: inline-block;
   width: 100%;
 }
-&#10;#lzqxbkpjko .gt_spanner_row {
+&#10;#lzclvsndpc .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#lzqxbkpjko .gt_group_heading {
+&#10;#lzclvsndpc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -260,7 +260,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   vertical-align: middle;
   text-align: left;
 }
-&#10;#lzqxbkpjko .gt_empty_group_heading {
+&#10;#lzclvsndpc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -274,13 +274,13 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#lzqxbkpjko .gt_from_md > :first-child {
+&#10;#lzclvsndpc .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#lzqxbkpjko .gt_from_md > :last-child {
+&#10;#lzclvsndpc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#lzqxbkpjko .gt_row {
+&#10;#lzclvsndpc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -298,7 +298,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#lzqxbkpjko .gt_stub {
+&#10;#lzclvsndpc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -310,7 +310,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#lzqxbkpjko .gt_stub_row_group {
+&#10;#lzclvsndpc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -323,13 +323,13 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#lzqxbkpjko .gt_row_group_first td {
+&#10;#lzclvsndpc .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#lzqxbkpjko .gt_row_group_first th {
+&#10;#lzclvsndpc .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#lzqxbkpjko .gt_summary_row {
+&#10;#lzclvsndpc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -338,14 +338,14 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#lzqxbkpjko .gt_first_summary_row {
+&#10;#lzclvsndpc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_first_summary_row.thick {
+&#10;#lzclvsndpc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#lzqxbkpjko .gt_last_summary_row {
+&#10;#lzclvsndpc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -354,7 +354,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_grand_summary_row {
+&#10;#lzclvsndpc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -363,7 +363,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#lzqxbkpjko .gt_first_grand_summary_row {
+&#10;#lzclvsndpc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -372,7 +372,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_last_grand_summary_row_top {
+&#10;#lzclvsndpc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -381,10 +381,10 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_striped {
+&#10;#lzclvsndpc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#lzqxbkpjko .gt_table_body {
+&#10;#lzclvsndpc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -392,7 +392,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_footnotes {
+&#10;#lzclvsndpc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -405,7 +405,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_footnote {
+&#10;#lzclvsndpc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -413,7 +413,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#lzqxbkpjko .gt_sourcenotes {
+&#10;#lzclvsndpc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -426,57 +426,57 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#lzqxbkpjko .gt_sourcenote {
+&#10;#lzclvsndpc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#lzqxbkpjko .gt_left {
+&#10;#lzclvsndpc .gt_left {
   text-align: left;
 }
-&#10;#lzqxbkpjko .gt_center {
+&#10;#lzclvsndpc .gt_center {
   text-align: center;
 }
-&#10;#lzqxbkpjko .gt_right {
+&#10;#lzclvsndpc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#lzqxbkpjko .gt_font_normal {
+&#10;#lzclvsndpc .gt_font_normal {
   font-weight: normal;
 }
-&#10;#lzqxbkpjko .gt_font_bold {
+&#10;#lzclvsndpc .gt_font_bold {
   font-weight: bold;
 }
-&#10;#lzqxbkpjko .gt_font_italic {
+&#10;#lzclvsndpc .gt_font_italic {
   font-style: italic;
 }
-&#10;#lzqxbkpjko .gt_super {
+&#10;#lzclvsndpc .gt_super {
   font-size: 65%;
 }
-&#10;#lzqxbkpjko .gt_footnote_marks {
+&#10;#lzclvsndpc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#lzqxbkpjko .gt_asterisk {
+&#10;#lzclvsndpc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#lzqxbkpjko .gt_indent_1 {
+&#10;#lzclvsndpc .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#lzqxbkpjko .gt_indent_2 {
+&#10;#lzclvsndpc .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#lzqxbkpjko .gt_indent_3 {
+&#10;#lzclvsndpc .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#lzqxbkpjko .gt_indent_4 {
+&#10;#lzclvsndpc .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#lzqxbkpjko .gt_indent_5 {
+&#10;#lzclvsndpc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -496,16 +496,16 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="id" class="gt_row gt_right">2</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.266179999999999</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.26618</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.09388</td></tr>
     <tr><td headers="id" class="gt_row gt_right">4</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">23.226700000000001</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">23.22670</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.83796</td></tr>
     <tr><td headers="id" class="gt_row gt_right">6</td>
 <td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.71246</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.58711</td></tr>
     <tr><td headers="id" class="gt_row gt_right">7</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">19.326219999999999</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">19.32622</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">19.17762</td></tr>
     <tr><td headers="id" class="gt_row gt_right">8</td>
 <td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">26.20532</td>
@@ -514,40 +514,40 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
 <td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">20.01614</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">19.64952</td></tr>
     <tr><td headers="id" class="gt_row gt_right">16</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">21.193200000000001</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">21.19320</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">21.18061</td></tr>
     <tr><td headers="id" class="gt_row gt_right">17</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">20.970790000000001</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">20.97079</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">20.83598</td></tr>
     <tr><td headers="id" class="gt_row gt_right">18</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">20.600290000000001</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">20.60029</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">20.53593</td></tr>
     <tr><td headers="id" class="gt_row gt_right">20</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.340219999999999</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.34022</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.19201</td></tr>
     <tr><td headers="id" class="gt_row gt_right">21</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.641390000000001</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.64139</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">22.59283</td></tr>
     <tr><td headers="id" class="gt_row gt_right">22</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">23.512810000000002</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">23.51281</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">23.49694</td></tr>
     <tr><td headers="id" class="gt_row gt_right">23</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">20.684640000000002</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">20.68464</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">20.50044</td></tr>
     <tr><td headers="id" class="gt_row gt_right">24</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">26.931529999999999</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">26.93153</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">15.92768</td></tr>
     <tr><td headers="id" class="gt_row gt_right">27</td>
 <td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">18.67069</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">18.63924</td></tr>
     <tr><td headers="id" class="gt_row gt_right">28</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">19.208269999999999</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">19.20827</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">18.86431</td></tr>
     <tr><td headers="id" class="gt_row gt_right">29</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">19.059640000000002</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">19.05964</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">18.99461</td></tr>
     <tr><td headers="id" class="gt_row gt_right">32</td>
-<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">31.031079999999999</td>
+<td headers="change1" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">31.03108</td>
 <td headers="change2" class="gt_row gt_right" style="color: #FF0000; font-weight: bold;">19.07309</td></tr>
   </tbody>
   &#10;  

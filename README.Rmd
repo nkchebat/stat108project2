@@ -35,8 +35,8 @@ This is a basic example which shows you how to use the plot_outliers function. T
 library(fatRats)
 library(readxl)
 data <- read_excel("R/data/mousedata.xlsx", sheet = 2)
-data$bw1 = as.numeric(data$`Body Weight 1`)
-plot_outliers(data, bw1)
+data$'Body Weight 1' = as.numeric(data$"Body Weight 1") #Make sure you have a numeric
+plot_outliers(data,"Body Weight 1")
 ```
 
 ## Example 2
