@@ -10,27 +10,24 @@ plot_outliers <- function(data, variable) {
   library(ggplot2)
   library(dplyr)
 
-  variable <- enquo(variable)
-
-  column_name <- as_label(variable)
-
-  if (!column_name %in% names(data)) {
-    stop(paste("Variable", column_name, "not found in the dataset."))
+  if (!variable %in% names(data)) {
+    stop(paste("Variable", variable, "not found in the dataset."))
   }
 
-  if (all(is.na(data[[column_name]]))) {
-    stop(paste("Variable", column_name, "contains only NA values."))
+  if (all(is.na(data[[variable]]))) {
+    warning(paste("Variable", variable, "contains only NA values. Returning an empty plot."))
+    return(ggplot() + labs(title = paste("Empty Plot for", variable)))
   }
 
-  outliers <- boxplot.stats(data[[column_name]])$out
-  outlier_data <- data %>% filter(!!variable %in% outliers)
-  t
-  ggplot(data, aes(y = !!variable, x = 1)) +
+  outliers <- boxplot.stats(data[[variable]])$out
+  outlier_data <- data %>% filter(.data[[variable]] %in% outliers)
+
+  ggplot(data, aes_string(y = variable, x = "1")) +
     geom_boxplot(outlier.colour = "red", outlier.size = 3, fill = "lightblue") +
     if (length(outliers) > 0) {
       geom_point(
         data = outlier_data,
-        aes(y = !!variable, x = 1),
+        aes_string(y = variable, x = "1"),
         color = "red",
         size = 3,
         shape = 21,
@@ -38,8 +35,8 @@ plot_outliers <- function(data, variable) {
       )
     } +
     labs(
-      title = paste("Boxplot of", column_name),
-      y = column_name,
+      title = paste("Boxplot of", variable),
+      y = variable,
       x = ""
     ) +
     theme_minimal()
