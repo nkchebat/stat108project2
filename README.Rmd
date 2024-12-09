@@ -21,7 +21,7 @@ The goal of fatRats is to help data scientists and statisticians handling raw da
 
 You can install the development version of fatRats from [GitHub](https://github.com/) with:
 
-```{r,warning=FALSE,echo=FALSE}
+```{r,warning=FALSE}
 install.packages("devtools")
 devtools::install_github("nkchebat/stat108project2")
 ```
@@ -31,7 +31,7 @@ devtools::install_github("nkchebat/stat108project2")
 
 This is a basic example which shows you how to use the plot_outliers function. This function is very useful if you are trying to check if your data seems reasonable. If you have any datapoints show up in red on the plot, you may want to go back to your data and ensure that there were no typos. 
 
-```{r example 1, warning=FALSE,echo=FALSE}
+```{r example 1, warning=FALSE}
 library(fatRats)
 library(readxl)
 data <- read_excel("R/data/mousedata.xlsx", sheet = 2)
@@ -43,7 +43,7 @@ plot_outliers(data, bw1)
 
 This is a basic example which shows you how to use the check_trend function. This function is useful for checking if there are major errors in your data. If you are observing an experiment with trends over time, this will allow you to check whether or not the data follows the trend you expect. You can then check which data points go against the trend in the table below.
 
-```{r example 2,warning=FALSE,echo=FALSE}
+```{r example 2,warning=FALSE}
 library(fatRats)
 data <- data #use the same data
 increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
