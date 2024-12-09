@@ -10,30 +10,31 @@ plot_outliers <- function(data, variable) {
   library(ggplot2)
   library(dplyr)
 
+  # Check if the variable (quoted column name) exists in the dataset
   if (!variable %in% names(data)) {
     stop(paste("Variable", variable, "not found in the dataset."))
   }
 
+  # Check for non-NA values
   if (all(is.na(data[[variable]]))) {
-    warning(paste("Variable", variable, "contains only NA values. Returning an empty plot."))
-    return(ggplot() + labs(title = paste("Empty Plot for", variable)))
+    stop(paste("Variable", variable, "contains only NA values. No plot generated."))
   }
 
+  # Identify outliers
   outliers <- boxplot.stats(data[[variable]])$out
   outlier_data <- data %>% filter(.data[[variable]] %in% outliers)
 
+  # Create the base plot
   ggplot(data, aes(y = .data[[variable]], x = 1)) +
     geom_boxplot(outlier.colour = "red", outlier.size = 3, fill = "lightblue") +
-    if (length(outliers) > 0) {
-      geom_point(
-        data = outlier_data,
-        aes(y = .data[[variable]], x = 1),
-        color = "red",
-        size = 3,
-        shape = 21,
-        stroke = 1.5
-      )
-    +
+    geom_point(
+      data = outlier_data,
+      aes(y = .data[[variable]], x = 1),
+      color = "red",
+      size = 3,
+      shape = 21,
+      stroke = 1.5
+    ) +
     labs(
       title = paste("Boxplot of", variable),
       y = variable,
