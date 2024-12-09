@@ -15,26 +15,22 @@ the correct sheet before you get started.
 You can install the development version of fatRats from
 [GitHub](https://github.com/) with:
 
-``` r
-install.packages("devtools")
-#> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpJfFeGv/temp_libpath16db0151f8606'
-#> (as 'lib' is unspecified)
-#> 
-#> The downloaded binary packages are in
-#>  /var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T//Rtmp5Tgg82/downloaded_packages
-devtools::install_github("nkchebat/stat108project2")
-#> Downloading GitHub repo nkchebat/stat108project2@HEAD
-#> ── R CMD build ─────────────────────────────────────────────────────────────────
-#> * checking for file ‘/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/Rtmp5Tgg82/remotes17852518e61e9/nkchebat-stat108project2-8e0850a/DESCRIPTION’ ... OK
-#> * preparing ‘fatRats’:
-#> * checking DESCRIPTION meta-information ... OK
-#> * checking for LF line-endings in source and make files and shell scripts
-#> * checking for empty or unneeded directories
-#> Omitted ‘LazyData’ from DESCRIPTION
-#> * building ‘fatRats_0.1.0.tar.gz’
-#> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpJfFeGv/temp_libpath16db0151f8606'
-#> (as 'lib' is unspecified)
-```
+    #> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpJfFeGv/temp_libpath16db01432c687'
+    #> (as 'lib' is unspecified)
+    #> 
+    #> The downloaded binary packages are in
+    #>  /var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T//RtmpnR5Tpw/downloaded_packages
+    #> Downloading GitHub repo nkchebat/stat108project2@HEAD
+    #> ── R CMD build ─────────────────────────────────────────────────────────────────
+    #> * checking for file ‘/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpnR5Tpw/remotes179145532995b/nkchebat-stat108project2-903d4ed/DESCRIPTION’ ... OK
+    #> * preparing ‘fatRats’:
+    #> * checking DESCRIPTION meta-information ... OK
+    #> * checking for LF line-endings in source and make files and shell scripts
+    #> * checking for empty or unneeded directories
+    #> Omitted ‘LazyData’ from DESCRIPTION
+    #> * building ‘fatRats_0.1.0.tar.gz’
+    #> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpJfFeGv/temp_libpath16db01432c687'
+    #> (as 'lib' is unspecified)
 
 ## Example 1
 
@@ -44,26 +40,16 @@ your data seems reasonable. If you have any datapoints show up in red on
 the plot, you may want to go back to your data and ensure that there
 were no typos.
 
-``` r
-library(fatRats)
-library(readxl)
-data <- read_excel("R/data/mousedata.xlsx", sheet = 2)
-#> New names:
-#> • `Date Body Weight 2` -> `Date Body Weight 2...5`
-#> • `Date Body Weight 2` -> `Date Body Weight 2...7`
-data$bw1 = as.numeric(data$`Body Weight 1`)
-plot_outliers(data, bw1)
-#> 
-#> Attaching package: 'dplyr'
-#> 
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> 
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
-```
+    #> New names:
+    #> Attaching package: 'dplyr'
+    #> The following objects are masked from 'package:stats':
+    #> 
+    #> filter, lag
+    #> The following objects are masked from 'package:base':
+    #> 
+    #> intersect, setdiff, setequal, union
+    #> • `Date Body Weight 2` -> `Date Body Weight 2...5`
+    #> • `Date Body Weight 2` -> `Date Body Weight 2...7`
 
 <img src="man/figures/README-example 1-1.png" width="100%" />
 
@@ -76,37 +62,30 @@ this will allow you to check whether or not the data follows the trend
 you expect. You can then check which data points go against the trend in
 the table below.
 
-``` r
-library(fatRats)
-data <- data #use the same data
-increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
-#> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-#> ✔ forcats   1.0.0     ✔ stringr   1.5.1
-#> ✔ lubridate 1.9.3     ✔ tibble    3.2.1
-#> ✔ purrr     1.0.2     ✔ tidyr     1.3.1
-#> ✔ readr     2.1.5     
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
-#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-#> Warning: Since gt v0.3.0, `columns = vars(...)` has been deprecated.
-#> • Please use `columns = c(...)` instead.
-```
+    #> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+    #> ✔ forcats   1.0.0     ✔ stringr   1.5.1
+    #> ✔ lubridate 1.9.3     ✔ tibble    3.2.1
+    #> ✔ purrr     1.0.2     ✔ tidyr     1.3.1
+    #> ✔ readr     2.1.5     
+    #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+    #> ✖ dplyr::filter() masks stats::filter()
+    #> ✖ dplyr::lag()    masks stats::lag()
+    #> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 
-<div id="muxrdzwgwu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#muxrdzwgwu table {
+<div id="hoqjuzjyjn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hoqjuzjyjn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#muxrdzwgwu thead, #muxrdzwgwu tbody, #muxrdzwgwu tfoot, #muxrdzwgwu tr, #muxrdzwgwu td, #muxrdzwgwu th {
+&#10;#hoqjuzjyjn thead, #hoqjuzjyjn tbody, #hoqjuzjyjn tfoot, #hoqjuzjyjn tr, #hoqjuzjyjn td, #hoqjuzjyjn th {
   border-style: none;
 }
-&#10;#muxrdzwgwu p {
+&#10;#hoqjuzjyjn p {
   margin: 0;
   padding: 0;
 }
-&#10;#muxrdzwgwu .gt_table {
+&#10;#hoqjuzjyjn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -131,11 +110,11 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_caption {
+&#10;#hoqjuzjyjn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#muxrdzwgwu .gt_title {
+&#10;#hoqjuzjyjn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -146,7 +125,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#muxrdzwgwu .gt_subtitle {
+&#10;#hoqjuzjyjn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -157,7 +136,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#muxrdzwgwu .gt_heading {
+&#10;#hoqjuzjyjn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -168,12 +147,12 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_bottom_border {
+&#10;#hoqjuzjyjn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_col_headings {
+&#10;#hoqjuzjyjn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -187,7 +166,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_col_heading {
+&#10;#hoqjuzjyjn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -206,7 +185,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#muxrdzwgwu .gt_column_spanner_outer {
+&#10;#hoqjuzjyjn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -217,13 +196,13 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#muxrdzwgwu .gt_column_spanner_outer:first-child {
+&#10;#hoqjuzjyjn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#muxrdzwgwu .gt_column_spanner_outer:last-child {
+&#10;#hoqjuzjyjn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#muxrdzwgwu .gt_column_spanner {
+&#10;#hoqjuzjyjn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -234,10 +213,10 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   display: inline-block;
   width: 100%;
 }
-&#10;#muxrdzwgwu .gt_spanner_row {
+&#10;#hoqjuzjyjn .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#muxrdzwgwu .gt_group_heading {
+&#10;#hoqjuzjyjn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -262,7 +241,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   vertical-align: middle;
   text-align: left;
 }
-&#10;#muxrdzwgwu .gt_empty_group_heading {
+&#10;#hoqjuzjyjn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -276,13 +255,13 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#muxrdzwgwu .gt_from_md > :first-child {
+&#10;#hoqjuzjyjn .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#muxrdzwgwu .gt_from_md > :last-child {
+&#10;#hoqjuzjyjn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#muxrdzwgwu .gt_row {
+&#10;#hoqjuzjyjn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -300,7 +279,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#muxrdzwgwu .gt_stub {
+&#10;#hoqjuzjyjn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -312,7 +291,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#muxrdzwgwu .gt_stub_row_group {
+&#10;#hoqjuzjyjn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -325,13 +304,13 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#muxrdzwgwu .gt_row_group_first td {
+&#10;#hoqjuzjyjn .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#muxrdzwgwu .gt_row_group_first th {
+&#10;#hoqjuzjyjn .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#muxrdzwgwu .gt_summary_row {
+&#10;#hoqjuzjyjn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -340,14 +319,14 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#muxrdzwgwu .gt_first_summary_row {
+&#10;#hoqjuzjyjn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_first_summary_row.thick {
+&#10;#hoqjuzjyjn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#muxrdzwgwu .gt_last_summary_row {
+&#10;#hoqjuzjyjn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -356,7 +335,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_grand_summary_row {
+&#10;#hoqjuzjyjn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -365,7 +344,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#muxrdzwgwu .gt_first_grand_summary_row {
+&#10;#hoqjuzjyjn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -374,7 +353,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_last_grand_summary_row_top {
+&#10;#hoqjuzjyjn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -383,10 +362,10 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_striped {
+&#10;#hoqjuzjyjn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#muxrdzwgwu .gt_table_body {
+&#10;#hoqjuzjyjn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -394,7 +373,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_footnotes {
+&#10;#hoqjuzjyjn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -407,7 +386,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_footnote {
+&#10;#hoqjuzjyjn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -415,7 +394,7 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#muxrdzwgwu .gt_sourcenotes {
+&#10;#hoqjuzjyjn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -428,57 +407,57 @@ increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#muxrdzwgwu .gt_sourcenote {
+&#10;#hoqjuzjyjn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#muxrdzwgwu .gt_left {
+&#10;#hoqjuzjyjn .gt_left {
   text-align: left;
 }
-&#10;#muxrdzwgwu .gt_center {
+&#10;#hoqjuzjyjn .gt_center {
   text-align: center;
 }
-&#10;#muxrdzwgwu .gt_right {
+&#10;#hoqjuzjyjn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#muxrdzwgwu .gt_font_normal {
+&#10;#hoqjuzjyjn .gt_font_normal {
   font-weight: normal;
 }
-&#10;#muxrdzwgwu .gt_font_bold {
+&#10;#hoqjuzjyjn .gt_font_bold {
   font-weight: bold;
 }
-&#10;#muxrdzwgwu .gt_font_italic {
+&#10;#hoqjuzjyjn .gt_font_italic {
   font-style: italic;
 }
-&#10;#muxrdzwgwu .gt_super {
+&#10;#hoqjuzjyjn .gt_super {
   font-size: 65%;
 }
-&#10;#muxrdzwgwu .gt_footnote_marks {
+&#10;#hoqjuzjyjn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#muxrdzwgwu .gt_asterisk {
+&#10;#hoqjuzjyjn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#muxrdzwgwu .gt_indent_1 {
+&#10;#hoqjuzjyjn .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#muxrdzwgwu .gt_indent_2 {
+&#10;#hoqjuzjyjn .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#muxrdzwgwu .gt_indent_3 {
+&#10;#hoqjuzjyjn .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#muxrdzwgwu .gt_indent_4 {
+&#10;#hoqjuzjyjn .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#muxrdzwgwu .gt_indent_5 {
+&#10;#hoqjuzjyjn .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
