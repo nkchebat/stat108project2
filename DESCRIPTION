@@ -1,11 +1,10 @@
 Package: fatRats
 Type: Package
-Title: What the Package Does (Title Case)
+Title: fatRats (R Package for data wrangling and cleaning of experiment data)
 Version: 0.1.0
 Author: Yusuf Mian, Waleed Ibrahim, Nick Chebat
-Maintainer: Yusuf Mian, Waleed Ibrahim, Nick Chebat
-Description: Assists in data cleaning for scientists. Functions help identify spelling errors, check for duplicates, plot outliers to visualize, and. 
-    Use four spaces when indenting paragraphs within the Description.
+Maintainer: Yusuf Mian <ymian@college.harvard.edu>
+Description: Assists in data cleaning for scientists. Functions help identify spelling errors, check for duplicates, plot outliers to visualize, and check if trends are correct. 
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
