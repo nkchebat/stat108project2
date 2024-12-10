@@ -20,9 +20,7 @@ library(fatRats)
 
 
 ```{r}
-library(readxl)
-data <- read_excel("R/data/mousedata.xslx", sheet=2)
-data_na <- read.csv("R/data/NA_data.csv")
+plot_outliers(data_weight,"Body.Weight.1")
 ```
 
 

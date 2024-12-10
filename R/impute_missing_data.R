@@ -2,7 +2,7 @@
 #'
 #' @param data A dataframe containing numeric columns with missing values.
 #' @param method A character string specifying the imputation method: "mean" or "median".
-#' @return A dataframe with missing values imputed.
+#' @return A dataframe with missing values imputed and a table summarizing the missing data.
 #' @examples
 #' data <- data.frame(
 #'   A = c(1, 2, NA, 4),
@@ -17,6 +17,15 @@ impute_missing_data <- function(data, imputation = "mean") {
     stop("Invalid choice. Choose either 'mean' or 'median'.")
   }
 
+  missing_summary <- data.frame(
+    Column = names(data),
+    Missing_Count = sapply(data, function(column) sum(is.na(column))),
+    Missing_Percentage = sapply(data, function(column) mean(is.na(column)) * 100)
+  )
+
+  cat("Missing Data Summary:\n")
+  print(missing_summary)
+
   data <- data.frame(lapply(data, function(column) {
     if (is.numeric(column)) {
       if (imputation == "mean") {
@@ -28,5 +37,5 @@ impute_missing_data <- function(data, imputation = "mean") {
     return(column)
   }))
 
-  return(data)
+  return(list(Imputed_Data = data, Missing_Summary = missing_summary))
 }
