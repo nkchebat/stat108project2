@@ -4,7 +4,7 @@ Title: fatRats (R Package for data wrangling and cleaning of experiment data)
 Version: 0.1.0
 Author: Yusuf Mian, Waleed Ibrahim, Nick Chebat
 Maintainer: Yusuf Mian <ymian@college.harvard.edu>
-Description: Assists in data cleaning for scientists. Functions help identify spelling errors, check for duplicates, plot outliers to visualize, and check if trends are correct. 
+Description: Assists in data cleaning for scientists. Functions help identify spelling errors, impute and summarize missing data, plot outliers to visualize, and check if trends are correct. 
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
