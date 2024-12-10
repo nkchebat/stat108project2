@@ -7,7 +7,7 @@
 #' @examples
 #' check_spelling(data, "Treatment", c("Placebo", "Treatment"))
 #' @export
-check_spelling <- function(data, column, valid_options) {
+spelling_check <- function(data, column, valid_options) {
   if (!column %in% names(data)) {
     stop(paste("Column", column, "not found in the dataset."))
   }
