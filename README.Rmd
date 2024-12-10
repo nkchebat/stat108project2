@@ -33,10 +33,7 @@ This is a basic example which shows you how to use the plot_outliers function. T
 
 ```{r example 1, warning=FALSE}
 library(fatRats)
-library(readxl)
-data <- read_excel("R/data/mousedata.xlsx", sheet = 2)
-data$'Body Weight 1' = as.numeric(data$"Body Weight 1") #Make sure you have a numeric
-plot_outliers(data,"Body Weight 1")
+plot_outliers(data_weight,"Body.Weight.1")
 ```
 
 ## Example 2
@@ -45,8 +42,7 @@ This is a basic example which shows you how to use the check_trend function. Thi
 
 ```{r example 2,warning=FALSE}
 library(fatRats)
-data <- data #use the same data
-increase_decrease(data, "Body Weight 1", "Body Weight 2", "increase")
+increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
 ```
 
 

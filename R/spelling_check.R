@@ -5,7 +5,7 @@
 #' @param valid_options A character vector of valid values for the column.
 #' @return A character vector of unmatched values (potential spelling errors).
 #' @examples
-#' check_spelling(data, "Treatment", c("Placebo", "Treatment"))
+#' spelling_check(data, "Treatment", c("Placebo", "Treatment"))
 #' @export
 spelling_check <- function(data, column, valid_options) {
   if (!column %in% names(data)) {

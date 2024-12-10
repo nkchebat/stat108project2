@@ -1,5 +1,5 @@
 ---
-title: "Introduction to fatRats"
+title: "fatRats"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{fatRats}
@@ -18,9 +18,41 @@ knitr::opts_chunk$set(
 library(fatRats)
 ```
 
+## Checking for Outliers.
+
+If you are dealing with a large dataset and are concerned about outliers amongst numeric variables, plot_outliers allows you to read in your dataset along with one variable and plots the distribution with the outliers highlighted in red. You can then go back through your data and check for any typos or mistakes in the process.
 
 ```{r}
 plot_outliers(data_weight,"Body.Weight.1")
 ```
 
+## Checking for trends.
 
+One concern among large dataset is that data entries may be misentered, throwing off the dataset. If you are measuring an effect over time that you know should follow a certain trend, this function allows you to go back through your data and select what data points do not follow the trend. Obviously, this is not necessarily a mistake, but it allows you idenfity potential errors. To use this function, simply put in your dataframe, two variables, and the expected trend.
+
+```{r}
+increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
+```
+
+To reverse the trend, simply use decrease instead.
+
+```{r}
+increase_decrease(data_weight, "Body.Weight.2", "Body.Weight.3", "decrease")
+```
+  
+## Checking for spelling errors.
+
+Another concern in very large datasets is having some character variables entered incorrectly. For some examples, this seems like a trivial check. But, this function could save you time if you are dealing with large numbers of rows and may have incorrectly entered your treatment names. Simply read in the data, the column, and the correct treatment names.
+
+```{r}
+spelling_check(data_birth, "Treatment", c("Plac", "Tmt"))
+```
+
+## Impute Missing Data
+
+If you are dealing with many NAs, this function will return your NAs and for any numeric variables, it will impute data based on mean or median. As you can see, it will not impute any NAs for factors or non numerics.
+
+```{r}
+impute_missing_data(nhanes,"mean")
+```
+  
