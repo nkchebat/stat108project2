@@ -1,5 +1,6 @@
 ---
 output: github_document
+
 ---
 
 
@@ -14,6 +15,7 @@ knitr::opts_chunk$set(
 
 # fatRats
 
+# fatRats <img src="man/figures/logo.png" align="right" height="120" alt="" />
 
 The goal of fatRats is to help data scientists and statisticians handling raw data and primarily handling lab data. We have created functions to help in the data cleaning process by higlighting errors in data cleaning and identify what changes may need to be made. All that the package requires for useage is a dataframe. The rest of the package is designed to be very easy to use. We recommend either reading in your files as a CSV or if you have an excel spreadsheet, be sure to read in the correct sheet before you get started.
 

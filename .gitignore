@@ -4,3 +4,4 @@
 .Ruserdata
 inst/doc
 .DS_Store
+^man/figures/Fat_Rats_Icon.png$
