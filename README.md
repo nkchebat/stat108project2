@@ -17,22 +17,76 @@ You can install the development version of fatRats from
 
 ``` r
 install.packages("devtools")
-#> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/Rtmp9AIBwF/temp_libpatha327421d4c'
+#> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpneNlVG/temp_libpath27b57a3674f2'
 #> (as 'lib' is unspecified)
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T//RtmpbbiCdQ/downloaded_packages
+#>  /var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T//RtmpVHDQHY/downloaded_packages
 devtools::install_github("nkchebat/stat108project2")
 #> Downloading GitHub repo nkchebat/stat108project2@HEAD
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#> * checking for file ‘/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpbbiCdQ/remotes10ce30daab62/nkchebat-stat108project2-32d6889/DESCRIPTION’ ... OK
+#> * checking for file ‘/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpVHDQHY/remotes28f9e126cb4/nkchebat-stat108project2-e11aafb/DESCRIPTION’ ... OK
 #> * preparing ‘fatRats’:
 #> * checking DESCRIPTION meta-information ... OK
 #> * checking for LF line-endings in source and make files and shell scripts
 #> * checking for empty or unneeded directories
 #> * building ‘fatRats_0.1.0.tar.gz’
-#> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/Rtmp9AIBwF/temp_libpatha327421d4c'
+#> Installing package into '/private/var/folders/bs/304947wx7_bdvtq7b3dynh5h0000gn/T/RtmpneNlVG/temp_libpath27b57a3674f2'
 #> (as 'lib' is unspecified)
+```
+
+## Load in the data
+
+This package has three preloaded datasets. Firs is data_weight which
+contains weight measurements from a mice experiment example. Use
+Body.Weight.1 and Body.Weight.2, or Body.Weight.3 as example weights.
+There also is date and ID information.
+
+``` r
+library(fatRats)
+head(data_weight)
+#>            ID Body.Weight.1 Date.Body.Weight.1 Body.Weight.2 Date.Body.Weight.2
+#> 1 C57BL6J_M_1         23.81            10/5/24         23.82           10/12/24
+#> 2 C57BL6J_M_2         22.27            10/5/24         22.09           10/12/24
+#> 3 C57BL6J_M_3         23.12            10/5/24         23.22           10/12/24
+#> 4 C57BL6J_M_4         23.23            10/5/24         22.84           10/12/24
+#> 5 C57BL6J_F_5         19.89            10/5/24         20.14           10/12/24
+#> 6 C57BL6J_M_6         22.71            10/5/24         22.59           10/12/24
+#>   Body.Weight.3 Date.Body.Weight.2.1  X X.1 X.2 X.3 X.4
+#> 1         24.11             10/19/24 NA  NA  NA  NA  NA
+#> 2         22.62             10/19/24 NA  NA  NA  NA  NA
+#> 3         22.86             10/19/24 NA  NA  NA  NA  NA
+#> 4         23.22             10/19/24 NA  NA  NA  NA  NA
+#> 5         19.71             10/19/24 NA  NA  NA  NA  NA
+#> 6         22.80             10/19/24 NA  NA  NA  NA  NA
+```
+
+The next is also from the example mice data and is data_birth. This
+contains example Treatment information along with Sex.
+
+``` r
+head(data_birth)
+#>            ID Sex Num Treatment
+#> 1 C57BL6J_M_1   M   1      Plac
+#> 2 C57BL6J_M_2   M   2      Plac
+#> 3 C57BL6J_M_3   M   3      Plac
+#> 4 C57BL6J_M_4   M   4      Plac
+#> 5 C57BL6J_M_5   M   5      Plac
+#> 6 C57BL6J_M_6   M   6      Plac
+```
+
+Last, we have data from the NHanes health survey. This has many numeric
+variables and one factor (female)
+
+``` r
+head(nhanes)
+#>   female weight systolic diastolic height
+#> 1      0   94.8      124        64  184.5
+#> 2      0   90.4      140        88  171.4
+#> 3      0   83.4      132        44  170.1
+#> 4      1  109.8      134        68  160.9
+#> 5      1   55.2      114        54  164.9
+#> 6      1   64.4      122        58  150.0
 ```
 
 ## Example 1
@@ -81,20 +135,20 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
 #> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 ```
 
-<div id="rsxrovcshg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rsxrovcshg table {
+<div id="vznvvmcxom" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vznvvmcxom table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#rsxrovcshg thead, #rsxrovcshg tbody, #rsxrovcshg tfoot, #rsxrovcshg tr, #rsxrovcshg td, #rsxrovcshg th {
+&#10;#vznvvmcxom thead, #vznvvmcxom tbody, #vznvvmcxom tfoot, #vznvvmcxom tr, #vznvvmcxom td, #vznvvmcxom th {
   border-style: none;
 }
-&#10;#rsxrovcshg p {
+&#10;#vznvvmcxom p {
   margin: 0;
   padding: 0;
 }
-&#10;#rsxrovcshg .gt_table {
+&#10;#vznvvmcxom .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -119,11 +173,11 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_caption {
+&#10;#vznvvmcxom .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#rsxrovcshg .gt_title {
+&#10;#vznvvmcxom .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -134,7 +188,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#rsxrovcshg .gt_subtitle {
+&#10;#vznvvmcxom .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -145,7 +199,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#rsxrovcshg .gt_heading {
+&#10;#vznvvmcxom .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -156,12 +210,12 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_bottom_border {
+&#10;#vznvvmcxom .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_col_headings {
+&#10;#vznvvmcxom .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -175,7 +229,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_col_heading {
+&#10;#vznvvmcxom .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -194,7 +248,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#rsxrovcshg .gt_column_spanner_outer {
+&#10;#vznvvmcxom .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -205,13 +259,13 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#rsxrovcshg .gt_column_spanner_outer:first-child {
+&#10;#vznvvmcxom .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#rsxrovcshg .gt_column_spanner_outer:last-child {
+&#10;#vznvvmcxom .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#rsxrovcshg .gt_column_spanner {
+&#10;#vznvvmcxom .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -222,10 +276,10 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   display: inline-block;
   width: 100%;
 }
-&#10;#rsxrovcshg .gt_spanner_row {
+&#10;#vznvvmcxom .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#rsxrovcshg .gt_group_heading {
+&#10;#vznvvmcxom .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -250,7 +304,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   vertical-align: middle;
   text-align: left;
 }
-&#10;#rsxrovcshg .gt_empty_group_heading {
+&#10;#vznvvmcxom .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -264,13 +318,13 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#rsxrovcshg .gt_from_md > :first-child {
+&#10;#vznvvmcxom .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#rsxrovcshg .gt_from_md > :last-child {
+&#10;#vznvvmcxom .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#rsxrovcshg .gt_row {
+&#10;#vznvvmcxom .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -288,7 +342,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#rsxrovcshg .gt_stub {
+&#10;#vznvvmcxom .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -300,7 +354,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rsxrovcshg .gt_stub_row_group {
+&#10;#vznvvmcxom .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -313,13 +367,13 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#rsxrovcshg .gt_row_group_first td {
+&#10;#vznvvmcxom .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#rsxrovcshg .gt_row_group_first th {
+&#10;#vznvvmcxom .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#rsxrovcshg .gt_summary_row {
+&#10;#vznvvmcxom .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -328,14 +382,14 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rsxrovcshg .gt_first_summary_row {
+&#10;#vznvvmcxom .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_first_summary_row.thick {
+&#10;#vznvvmcxom .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#rsxrovcshg .gt_last_summary_row {
+&#10;#vznvvmcxom .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -344,7 +398,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_grand_summary_row {
+&#10;#vznvvmcxom .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -353,7 +407,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rsxrovcshg .gt_first_grand_summary_row {
+&#10;#vznvvmcxom .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -362,7 +416,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_last_grand_summary_row_top {
+&#10;#vznvvmcxom .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -371,10 +425,10 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_striped {
+&#10;#vznvvmcxom .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#rsxrovcshg .gt_table_body {
+&#10;#vznvvmcxom .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +436,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_footnotes {
+&#10;#vznvvmcxom .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -395,7 +449,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_footnote {
+&#10;#vznvvmcxom .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -403,7 +457,7 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rsxrovcshg .gt_sourcenotes {
+&#10;#vznvvmcxom .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -416,57 +470,57 @@ increase_decrease(data_weight, "Body.Weight.1", "Body.Weight.2", "increase")
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#rsxrovcshg .gt_sourcenote {
+&#10;#vznvvmcxom .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rsxrovcshg .gt_left {
+&#10;#vznvvmcxom .gt_left {
   text-align: left;
 }
-&#10;#rsxrovcshg .gt_center {
+&#10;#vznvvmcxom .gt_center {
   text-align: center;
 }
-&#10;#rsxrovcshg .gt_right {
+&#10;#vznvvmcxom .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#rsxrovcshg .gt_font_normal {
+&#10;#vznvvmcxom .gt_font_normal {
   font-weight: normal;
 }
-&#10;#rsxrovcshg .gt_font_bold {
+&#10;#vznvvmcxom .gt_font_bold {
   font-weight: bold;
 }
-&#10;#rsxrovcshg .gt_font_italic {
+&#10;#vznvvmcxom .gt_font_italic {
   font-style: italic;
 }
-&#10;#rsxrovcshg .gt_super {
+&#10;#vznvvmcxom .gt_super {
   font-size: 65%;
 }
-&#10;#rsxrovcshg .gt_footnote_marks {
+&#10;#vznvvmcxom .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#rsxrovcshg .gt_asterisk {
+&#10;#vznvvmcxom .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#rsxrovcshg .gt_indent_1 {
+&#10;#vznvvmcxom .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#rsxrovcshg .gt_indent_2 {
+&#10;#vznvvmcxom .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#rsxrovcshg .gt_indent_3 {
+&#10;#vznvvmcxom .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#rsxrovcshg .gt_indent_4 {
+&#10;#vznvvmcxom .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#rsxrovcshg .gt_indent_5 {
+&#10;#vznvvmcxom .gt_indent_5 {
   text-indent: 25px;
 }
 </style>

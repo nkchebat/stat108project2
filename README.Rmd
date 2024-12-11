@@ -26,6 +26,28 @@ install.packages("devtools")
 devtools::install_github("nkchebat/stat108project2")
 ```
 
+## Load in the data
+
+This package has three preloaded datasets. Firs is data_weight which contains weight measurements from a mice experiment example. Use Body.Weight.1 and Body.Weight.2, or Body.Weight.3 as example weights. There also is date and ID information.
+
+```{r}
+library(fatRats)
+head(data_weight)
+```
+
+The next is also from the example mice data and is data_birth. This contains example Treatment information along with Sex.
+
+```{r}
+head(data_birth)
+```
+
+Last, we have data from the NHanes health survey. This has many numeric variables and one factor (female)
+
+```{r}
+head(nhanes)
+
+```
+
 
 ## Example 1
 
